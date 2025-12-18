@@ -1,0 +1,300 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="mb-4">Опитування щодо стану здоров'я</h3>
+
+<div class="card card-shadow p-4">
+  <form method="post">
+
+    <!-- GENHLTH -->
+    <div class="mb-3">
+      <label class="form-label">В цілому, як би ви оцінили свій стан здоров'я?</label>
+      <select name="GENHLTH" class="form-select" required>
+        <option>Відмінно</option>
+        <option>Дуже добре</option>
+        <option>Добре</option>
+        <option>Задовільно</option>
+        <option>Погано</option>
+      </select>
+    </div>
+
+    <!-- X_AGEG5YR -->
+    <div class="mb-3">
+      <label class="form-label">Ваш вік</label>
+      <select name="X_AGEG5YR" class="form-select" required>
+        <option>31–40 років</option>
+        <option>41–50 років</option>
+        <option>51–60 років</option>
+        <option>61–70 років</option>
+        <option>71–80 років</option>
+        <option>більше 81 року</option>
+      </select>
+    </div>
+
+    <!-- X_BMI5CAT -->
+    <div class="mb-3">
+      <label class="form-label">Ваш індекс маси тіла (BMI)</label>
+      <select name="X_BMI5CAT" class="form-select" required>
+        <option>Недостатня вага</option>
+        <option>Нормальна вага</option>
+        <option>Надмірна вага</option>
+        <option>Ожиріння</option>
+      </select>
+    </div>
+
+    <!-- CHECKUP1 -->
+    <div class="mb-3">
+      <label class="form-label">Коли ви востаннє проходили профілактичний огляд у лікаря?</label>
+      <select name="CHECKUP1" class="form-select" required>
+        <option>Менше 1 року</option>
+        <option>1–2 роки</option>
+        <option>3–5 років</option>
+        <option>Більше 5 років</option>
+        <option>Ніколи</option>
+      </select>
+    </div>
+
+    <!-- INCOME2 -->
+    <div class="mb-3">
+      <label class="form-label">Сукупний дохід вашого домогосподарства на рік</label>
+      <select name="INCOME2" class="form-select" required>
+        <option>Менше $10 тис.</option>
+        <option>$10–15 тис.</option>
+        <option>$15–20 тис.</option>
+        <option>$20–25 тис.</option>
+        <option>$25–35 тис.</option>
+        <option>$35–50 тис.</option>
+        <option>$50–75 тис.</option>
+        <option>Більше $75 тис.</option>
+      </select>
+    </div>
+
+    <!-- X_RACE -->
+    <div class="mb-3">
+      <label class="form-label">Ваша раса / етнічність</label>
+      <select name="X_RACE" class="form-select" required>
+        <option>Білий</option>
+        <option>Чорний</option>
+        <option>Американець індіанського походження або коренем жителем Аляски</option>
+        <option>Азіат</option>
+        <option>Цільносоціальні гавайці або інші мешканці Тихого океану</option>
+        <option>Інша раса</option>
+        <option>Змішаної раси</option>
+        <option>Іспанець</option>
+      </select>
+    </div>
+
+    <!-- MSCODE -->
+    <div class="mb-3">
+      <label class="form-label">Де ви проживаєте?</label>
+      <select name="MSCODE" class="form-select" required>
+        <option>Центр міста</option>
+        <option>Райони округи</option>
+        <option>Передмістя</option>
+        <option>Не в межах MSA</option>
+      </select>
+    </div>
+
+    <!-- FLUSHOT6 -->
+    <div class="mb-3">
+      <label class="form-label">За останні 12 місяців ви робили щеплення від грипу?</label>
+      <select name="FLUSHOT6" class="form-select" required>
+        <option>Так</option>
+        <option>Ні</option>
+      </select>
+    </div>
+
+    <!-- EMPLOY1 -->
+    <div class="mb-3">
+      <label class="form-label">Ваша зайнятість</label>
+      <select name="EMPLOY1" class="form-select" required>
+        <option>Працюю</option>
+        <option>Індивідуальний підприємець</option>
+        <option>Без роботи більше 1 року</option>
+        <option>Без роботи менше 1 року</option>
+        <option>Домогосподарка</option>
+        <option>Студент</option>
+        <option>На пенсії</option>
+        <option>Не можу працювати</option>
+      </select>
+    </div>
+
+    <!-- SEX -->
+    <div class="mb-3">
+      <label class="form-label">Стать</label>
+      <select name="SEX" class="form-select" required>
+        <option>Чоловік</option>
+        <option>Жінка</option>
+      </select>
+    </div>
+
+    <!-- MARITAL -->
+    <div class="mb-3">
+      <label class="form-label">Сімейний стан</label>
+      <select name="MARITAL" class="form-select" required>
+        <option>Одружений(а)</option>
+        <option>Розлучений(а)</option>
+        <option>Вдівець/вдова</option>
+        <option>Розлучені разом</option>
+        <option>Ніколи не одружувався(лась)</option>
+        <option>Неолюблена пара</option>
+      </select>
+    </div>
+
+    <!-- X_EDUCAG -->
+    <div class="mb-3">
+      <label class="form-label">Освіта</label>
+      <select name="X_EDUCAG" class="form-select" required>
+        <option>Не закінчив(ла) середню школу</option>
+        <option>Закінчив(ла) середню школу</option>
+        <option>Відвідував(а) коледж</option>
+        <option>Закінчив(ла) коледж</option>
+      </select>
+    </div>
+
+    <!-- SLEPTIM1 -->
+    <div class="mb-3">
+      <label class="form-label">Середня тривалість сну за добу</label>
+      <select name="SLEPTIM1" class="form-select" required>
+        <option>1–6 годин</option>
+        <option>7–8 годин</option>
+        <option>9 або більше годин</option>
+      </select>
+    </div>
+
+    <!-- CVDCRHD4 -->
+    <div class="mb-3">
+      <label class="form-label">Чи казав вам лікар, що у вас була стенокардія чи ІХС?</label>
+      <select name="CVDCRHD4" class="form-select" required>
+        <option>Так</option>
+        <option>Ні</option>
+      </select>
+    </div>
+
+    <!-- HLTHCVR1 -->
+    <div class="mb-3">
+      <label class="form-label">Чи маєте ви основне медичне страхування / покриття?</label>
+      <select name="HLTHCVR1" class="form-select" required>
+        <option>Так</option>
+        <option>Ні</option>
+      </select>
+    </div>
+
+    <!-- MENTHLTH -->
+    <div class="mb-3">
+      <label class="form-label">За останні 30 днів, скільки днів ваш психологічний стан був незадовільним?</label>
+      <select name="MENTHLTH" class="form-select" required>
+        <option>0–5 днів</option>
+        <option>6–30 днів</option>
+      </select>
+    </div>
+
+    <!-- CHCKIDNY -->
+    <div class="mb-3">
+      <label class="form-label">Чи казали вам, що у вас є захворювання нирок?</label>
+      <select name="CHCKIDNY" class="form-select" required>
+        <option>Так</option>
+        <option>Ні</option>
+      </select>
+    </div>
+
+    <!-- USEEQUIP -->
+    <div class="mb-3">
+      <label class="form-label">Чи використовуєте ви спеціальне обладнання (тростина, візок тощо)?</label>
+      <select name="USEEQUIP" class="form-select" required>
+        <option>Так</option>
+        <option>Ні</option>
+      </select>
+    </div>
+
+    <!-- X_TOTINDA -->
+    <div class="mb-3">
+      <label class="form-label">За останні 30 днів чи мали ви фізичну активність, окрім роботи?</label>
+      <select name="X_TOTINDA" class="form-select" required>
+        <option>Мав(а) фізичну активність або вправи</option>
+        <option>Немає фізичної активності за останні 30 днів</option>
+      </select>
+    </div>
+
+    <!-- ADDEPEV2 -->
+    <div class="mb-3">
+      <label class="form-label">Чи казали вам, що у вас депресивний розлад?</label>
+      <select name="ADDEPEV2" class="form-select" required>
+        <option>Так</option>
+        <option>Ні</option>
+      </select>
+    </div>
+
+    <!-- RENTHOM1 -->
+    <div class="mb-3">
+      <label class="form-label">Ви орендуєте чи володієте житлом?</label>
+      <select name="RENTHOM1" class="form-select" required>
+        <option>Власна</option>
+        <option>Орендована</option>
+        <option>Інша</option>
+      </select>
+    </div>
+
+    <!-- EXERANY2 -->
+    <div class="mb-3">
+      <label class="form-label">Чи займаєтесь ви фізичними вправами у вільний час?</label>
+      <select name="EXERANY2" class="form-select" required>
+        <option>Так</option>
+        <option>Ні</option>
+      </select>
+    </div>
+
+    <!-- BLIND -->
+    <div class="mb-3">
+      <label class="form-label">Чи маєте ви серйозні проблеми із зором, навіть в окулярах?</label>
+      <select name="BLIND" class="form-select" required>
+        <option>Так</option>
+        <option>Ні</option>
+      </select>
+    </div>
+
+    <!-- DECIDE -->
+    <div class="mb-3">
+      <label class="form-label">Чи маєте ви труднощі з концентрацією, пам'яттю або прийняттям рішень?</label>
+      <select name="DECIDE" class="form-select" required>
+        <option>Так</option>
+        <option>Ні</option>
+      </select>
+    </div>
+
+    <!-- HLTHPLN1 -->
+    <div class="mb-3">
+      <label class="form-label">Чи є у вас будь-який вид медичного страхування?</label>
+      <select name="HLTHPLN1" class="form-select" required>
+        <option>Так</option>
+        <option>Ні</option>
+      </select>
+    </div>
+
+    <!-- DIABETE3 -->
+    <div class="mb-3">
+      <label class="form-label">Чи казали вам, що у вас діабет?</label>
+      <select name="DIABETE3" class="form-select" required>
+        <option>Так</option>
+        <option>Так, але тільки під час вагітності</option>
+        <option>Ні</option>
+        <option>Предіабет / межа</option>
+      </select>
+    </div>
+
+    <!-- _SMOKER3 -->
+    <div class="mb-3">
+      <label class="form-label">Ваш статус щодо куріння</label>
+      <select name="_SMOKER3" class="form-select" required>
+        <option>Курю кожен день</option>
+        <option>Курю деякі дні</option>
+        <option>Колишній палій</option>
+        <option>Ніколи не палив(а)</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Отримати результат</button>
+  </form>
+</div>
+
+{% endblock %}

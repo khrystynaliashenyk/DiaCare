@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card card-shadow p-4">
+      <h3 class="mb-3">Реєстрація пацієнта</h3>
+
+      <form method="post">
+        <div class="row mb-3">
+          <div class="col">
+            <label class="form-label">Ім'я</label>
+            <input type="text" name="first_name" class="form-control" required>
+          </div>
+          <div class="col">
+            <label class="form-label">Прізвище</label>
+            <input type="text" name="last_name" class="form-control" required>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Оберіть лікаря</label>
+          <select name="doctor" class="form-select" required>
+            {% for d in doctors %}
+              <option value="{{ d }}">{{ d }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Бажаєте пройти перевірку на діабет?</label>
+          <div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="wants_check" value="Yes" checked>
+              <label class="form-check-label">Так</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="wants_check" value="No">
+              <label class="form-check-label">Ні</label>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Продовжити</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

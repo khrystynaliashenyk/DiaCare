@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row hero align-items-center">
+  <div class="col-md-6">
+    <h1 class="mb-3">Ласкаво просимо до медичного центру "DiaCare"</h1>
+    <p class="lead">
+      Наша клініка спеціалізується на ранньому виявленні та профілактиці цукрового діабету.
+    </p>
+    <p>
+      Ви можете пройти коротке опитування, обрати лікаря та отримати попередню оцінку ризику.
+    </p>
+    <a href="{{ url_for('register') }}" class="btn btn-primary btn-lg mt-3">
+      Розпочати обстеження
+    </a>
+  </div>
+  <div class="col-md-6">
+    <img src="https://images.pexels.com/photos/6129681/pexels-photo-6129681.jpeg"
+         class="img-fluid rounded-4 shadow"
+         alt="Hospital">
+  </div>
+</div>
+
+{% endblock %}
