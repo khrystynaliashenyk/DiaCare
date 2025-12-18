@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row mb-4">
+  <div class="col-md-8">
+    <div class="card card-shadow p-4">
+      <h4 class="mb-2">Результат обстеження</h4>
+      <p class="mb-1"><b>Пацієнт:</b> {{ last_name }} {{ first_name }}</p>
+      <p class="mb-1"><b>Лікар:</b> {{ doctor }}</p>
+      <hr>
+      <p class="mb-1">
+        <b>Прогноз моделі Random Forest:</b><br>
+        {{ pred_label }}
+      </p>
+      <p class="mb-1">
+        <b>Оцінка ризику (0–100):</b> {{ score|round(1) }}
+      </p>
+      <p class="mb-0">
+        <b>Рівень ризику:</b>
+        <span class="badge bg-{{ color }} ms-1">
+          {{ level }}
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="row g-4">
+  <div class="col-md-6">
+    <div class="card card-shadow p-3">
+      <h5>Ризик діабету</h5>
+      <img src="data:image/png;base64,{{ risk_img }}" class="img-fluid mt-2" alt="Risk chart">
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card card-shadow p-3">
+      <h5>Ймовірності діабету (0/1/2)</h5>
+      <p class="small mb-1">
+        0 – немає діабету: {{ proba0|round(1) }}%<br>
+        1 – переддіабет: {{ proba1|round(1) }}%<br>
+        2 – діабет: {{ proba2|round(1) }}%
+      </p>
+      <img src="data:image/png;base64,{{ proba_img }}" class="img-fluid mt-2" alt="Probabilities chart">
+    </div>
+  </div>
+</div>
+
+<div class="row g-4 mt-1">
+  <div class="col-md-6">
+    <div class="card card-shadow p-3">
+      <h5>Профіль факторів ризику пацієнта</h5>
+      <img src="data:image/png;base64,{{ radar_img }}" class="img-fluid mt-2" alt="Radar chart">
+    </div>
+  </div>
+
+
+</div>
+
+<div class="mt-4">
+  <a href="{{ url_for('home') }}" class="btn btn-outline-primary">На головну</a>
+</div>
+
+{% endblock %}
